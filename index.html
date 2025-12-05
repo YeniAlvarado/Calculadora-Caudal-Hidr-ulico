@@ -1,0 +1,38 @@
+<!-- Cargar librería Chart.js desde CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="container">
+  <div class="card">
+    <div class="header">
+      <h2>Calculadora de Caudal Hidráulico</h2>
+      <p>Ecuación: Q = A · v</p>
+    </div>
+
+    <div class="input-group">
+      <label for="area">Área de sección A (m²)</label>
+      <input type="number" id="area" step="0.01" placeholder="Ej: 0.05">
+    </div>
+
+    <div class="input-group">
+      <label for="velocity">Velocidad v (m/s)</label>
+      <input type="number" id="velocity" step="0.1" placeholder="Ej: 2.5">
+    </div>
+
+    <div class="button-group">
+      <button id="btn-calc" class="btn-primary">Calcular Caudal</button>
+      <button id="btn-reset" class="btn-secondary">Restablecer</button>
+    </div>
+
+    <!-- Sección de Resultados (Oculta al inicio) -->
+    <div id="result-container" class="result-box hidden">
+      <div class="result-value">
+        <span id="q-value">0.000</span> m³/s
+      </div>
+      <div id="status-text" class="status-badge">Esperando datos...</div>
+      
+      <div class="chart-wrapper">
+        <canvas id="flowChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
